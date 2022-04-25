@@ -1,0 +1,9 @@
+var EmpId=546554;
+var EmpName="Scott";
+var EmpJob="Manager";
+var EmpPermanent=true;
+var EmpSalary="INR 45000";
+var EmpDept=10;
+
+var outputstr= `Employee Id: ${EmpId}, Employee Name: ${EmpName}, Employee Job: ${EmpJob}, Is Permanent Employee: ${EmpPermanent}, Employee Salary: ${EmpSalary}, Employee DeptNo: ${EmpDept}`
+console.log(outputstr);
