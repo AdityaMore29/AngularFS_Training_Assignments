@@ -1,0 +1,15 @@
+<fieldset>
+
+<span>Product Name:</span>    
+<input type="text" [(ngModel)]="Prodname" > <br><br>
+
+<span>Unit Price:</span>    
+<input type="int" [(ngModel)]="Price"> <br><br>
+
+<span>Qty:</span>    
+<input type="int" [(ngModel)]="Qty"> <br> <br>
+
+<button (click)="calculatevalue()">calculate</button> <br> <br>
+
+<span [style.background]="Amt>1000? 'green': 'white'">{{result}} {{Amt}}</span>
+</fieldset>
