@@ -1,0 +1,24 @@
+<table border="1">
+    <th>Emp Number</th>
+    <th>Emp Name</th>
+    <th>Job</th>
+    <th>Salary</th>
+    <th>Dept No</th>
+    <tr *ngFor="let item of EmpArr">
+<td>
+    {{item.EmpId}}
+</td>
+<td>
+    {{item.EmpName}}
+</td>
+<td>
+    {{item.Job}}
+</td>
+<td>
+    {{item.Salary}}
+</td>
+<td>
+    {{item.DeptNo}}
+</td>
+    </tr>
+</table>
