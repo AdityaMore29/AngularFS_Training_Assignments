@@ -1,0 +1,6 @@
+<div><h1>Application development</h1></div>
+
+<hr>
+<app-sort-options (onSorting)="SendSortdata($event)"></app-sort-options>
+<br>
+<app-emp-list [sortoption]="sortopt"></app-emp-list>
