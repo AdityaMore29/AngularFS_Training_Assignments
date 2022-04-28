@@ -23,9 +23,16 @@ EmpArrycopy:employee[]=[];
   }
   ngOnChanges(changes: SimpleChanges): void {
     if(this.sortoption !=""){
-      alert("check in Emp-List");
-      this.EmpArrycopy=this.EmpArr.sort(function(a,b){return a.EmpId < b.EmpId ? 1 :-1});
-      this.EmpArr=this.EmpArrycopy;
+      if(this.sortoption =="EmpNo"){
+        alert("check in Emp-List");
+        this.EmpArrycopy=this.EmpArr.sort(function(a,b){return a.EmpId < b.EmpId ? 1 :-1});
+        this.EmpArr=this.EmpArrycopy;
+      }
+      else if(this.sortoption =="EmpName"){
+        this.EmpArrycopy=this.EmpArr.sort(function(a,b){return a.EmpName < b.EmpName ? 1 :-1});
+        this.EmpArr=this.EmpArrycopy;
+      }
+      
     }
   }
 
