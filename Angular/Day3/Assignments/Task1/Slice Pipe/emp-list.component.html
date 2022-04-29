@@ -1,0 +1,9 @@
+
+<button *ngIf="this.end<=this.EmpArr.length" (click)="click_load()">Load More..</button> <br>
+<div *ngFor="let item of EmpArr | slice:start:end" class="card">    
+    <div class="container">
+      <h4><b>{{item.EmpName}}</b></h4>
+      <p>{{item.Job}}</p>
+      <p>{{item.Salary}}</p>
+    </div>
+  </div>
