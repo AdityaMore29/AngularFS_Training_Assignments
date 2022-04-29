@@ -1,0 +1,13 @@
+<div>
+    <h2>Employee Performance</h2>
+    <table border="2">
+        <th>Sr.No.</th>
+        <th>Employee Name</th>
+        <th>Grades</th>
+        <tr *ngFor="let item of EmpArray">
+<td>{{item.empID}}</td>
+<td>{{item.uname}}</td>
+<td>{{item.grade | grades}}</td>
+        </tr>
+    </table>
+</div>>
