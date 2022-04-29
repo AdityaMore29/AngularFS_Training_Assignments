@@ -1,0 +1,9 @@
+<input type="number" placeholder="Enter starting salary" [(ngModel)]="Fparam1"> &nbsp; <input type="number" placeholder="Enter last salary" [(ngModel)]="Fparam2"> &nbsp; 
+<button (click)="filtersalaryRange()">Filter salary</button> <br>
+<div *ngFor="let item of EmpArr | range:param1:param2" class="card">    
+    <div class="container">
+      <h4><b>{{item.EmpName}}</b></h4>
+      <p>{{item.Job}}</p>
+      <p>{{item.Salary}}</p>
+    </div>
+  </div>
