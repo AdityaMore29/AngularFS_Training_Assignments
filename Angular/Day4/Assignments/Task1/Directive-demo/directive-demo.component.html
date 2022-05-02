@@ -1,0 +1,179 @@
+<style>
+
+* {
+
+box-sizing: border-box;
+
+}
+
+
+
+body {
+
+font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+/* Float four columns side by side */
+
+.column {
+
+float: left;
+
+width: 25%;
+
+padding: 0 10px;
+
+}
+
+
+
+/* Remove extra left and right margins, due to padding */
+
+.row {margin: 0 -5px;}
+
+
+
+/* Clear floats after the columns */
+
+.row:after {
+
+content: "";
+
+display: table;
+
+clear: both;
+
+}
+
+
+
+/* Responsive columns */
+
+@media screen and (max-width: 600px) {
+
+.column {
+
+  width: 100%;
+
+  display: block;
+
+  margin-bottom: 20px;
+
+}
+
+}
+
+
+
+/* Style the counter cards */
+
+.card {
+
+box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+
+padding: 16px;
+
+text-align: center;
+
+background-color: #f1f1f1;
+
+
+
+}
+
+    .c1
+  {
+    color : dodgerblue;
+    border:1px solid dodgerblue;
+    width :  100px;
+    margin : 5px;
+    float : left;
+    text-align : center;
+    background-color : white;
+  }
+
+  .c2
+  {
+     background-color: dodgerblue;
+     color : white;
+     margin: 0px;
+  }
+</style>
+
+<h3>Working with directives in Angular -- Multiple display models</h3>
+<hr/>
+Select Display Mode :
+
+<img src="assets/list.png" (mouseover)="Change_view('List')" title="list view"> &nbsp; 
+<img src="assets/details.png" (mouseover)="Change_view('Details')" title="details view">&nbsp; 
+<img src="assets/small.png" height="50" (mouseover)="Change_view('Large')" title="Large view">&nbsp; 
+<img src="assets/small.png" (mouseover)="Change_view('Small')" title="Small view">&nbsp; 
+<section  [ngSwitch]="displayMode">
+
+    
+      <article *ngSwitchCase=" 'List' ">
+      <ul>
+        <li  *ngFor="let item of productArr">
+            
+            <span style="color:blue;">{{item.PName}}</span> &nbsp;
+            Price :
+            <span >{{item.Price}}</span>
+            
+            /-
+        </li>
+      </ul>
+    </article>
+
+    <article *ngSwitchCase=" 'Details' ">
+      <table border="1">
+<tr>
+  <th>Product ID</th>
+  <th>Product Name</th>
+  <th>Product Price</th>
+  <th>Product Category</th>
+  <th>Product Qty</th>
+</tr>
+<tr *ngFor="let item of productArr">
+  <td>{{item.PId}}</td>
+  <td>{{item.PName}}</td>
+  <td>{{item.Price}}</td>
+  <td>{{item.Category}}</td>
+  <td>{{item.Qty}}</td>
+</tr>
+</table>
+    </article>
+    <article *ngSwitchCase=" 'Large' ">
+      <div class="row">
+        <div *ngFor="let item of productArr" class="column">
+            <div class="card">    
+                <div class="container">
+                  
+                  <img height="300" width="300" src={{item.imgpath}} >
+                  <p> Product Name : {{item.PName}}</p>
+                  <p>Price :{{item.Price}}</p>
+                  
+                </div>
+              </div>
+         </div>
+     </div>
+    </article>
+    <article *ngSwitchCase=" 'Small' ">
+      <div class="row">
+        <div *ngFor="let item of productArr" class="column">
+            <div class="card">    
+                <div class="container">
+                  
+                  <img height="150" width="150" src={{item.imgpath}} >
+                  <p> Product Name : {{item.PName}}</p>
+                  <p>Price :{{item.Price}}</p>
+                  <p>Category: {{item.Category}}</p>
+                 
+                </div>
+              </div>
+         </div>
+     </div>
+    </article>
+</section>
