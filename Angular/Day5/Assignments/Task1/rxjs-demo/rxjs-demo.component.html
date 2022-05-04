@@ -1,0 +1,15 @@
+<div style="text-align: center;"> <h3>To Do Input</h3></div>
+<div>
+    <input type="text" placeholder="To do" [(ngModel)]="newTask">
+    <button (click)="saveTask()">Add New Task</button>
+    <button (click)="updateTask()"> Update Task</button>
+</div>
+<div style="text-align: center;"> <h3>To Do List</h3></div>
+<div>
+    <ul>
+        <li *ngFor="let item of taskArr">
+            <div> <span [ngStyle]="{'text-decoration':(item.IsDone === true) ? 'line-through' : 'none' }"> {{item.TName}}</span> <input [(ngModel)]="item.IsDone" type="checkbox"> <img height="15" (click)="editName(item.TName,item.TId)" src="assets/edit.png" /> <img height="15" src="assets/delete.png" /> </div> 
+        </li>
+    </ul>
+    <button (click)="(removeDoneTasks())">Delete Done Tasks</button> <button (click)="removeAllTasks()">Delete All Tasks</button>
+</div>
