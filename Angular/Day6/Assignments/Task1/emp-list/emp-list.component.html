@@ -1,0 +1,28 @@
+
+
+<div>
+    <input type="number" placeholder="id" [(ngModel)]="id">&nbsp;
+    <input type="text" placeholder="Name" [(ngModel)]="EmpName"> &nbsp;
+    <input type="number" placeholder="Salary" [(ngModel)]="Salary">&nbsp;
+    <input type="text" placeholder="Job" [(ngModel)]="Job"> &nbsp;
+    <input type="number" placeholder="Department No" [(ngModel)]="Dept">&nbsp;
+    <button (click)="AddEmp()">Add</button>&nbsp;  <button (click)="UpdateEmp()">Update</button> &nbsp; <button (click)="RemoveEmp()">Remove</button> <br>
+</div>
+  <div>
+    <h2>Employee Performance</h2>
+    <table border="2">
+        <th>Sr.No.</th>
+        <th>Employee Name</th>
+        <th>Salary</th>
+        <th>Job</th>
+        <th>Dept</th>
+        <tr *ngFor="let item of EmpArr">
+<td>{{item.id}}</td>
+<td>{{item.EmpName}}</td>
+<td>{{item.Salary}}</td>
+<td>{{item.Job}}</td>
+<td>{{item.Dept}}</td>
+<td><a href="javascript:0()" (click)="EditData(item.id, item.EmpName, item.Salary,item.Job,item.Dept)">edit</a></td>
+        </tr>
+    </table>
+</div>
