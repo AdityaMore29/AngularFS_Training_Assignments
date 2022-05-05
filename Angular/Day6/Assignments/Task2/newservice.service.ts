@@ -15,34 +15,7 @@ export class NewserviceService {
   {   
     return this.httpObj.get(this.baseUrl);
   }
-  // Read All
-
-
-  // Read Single
-  public getStudentById(sid:number):any
-  {
-    return this.httpObj.get(this.baseUrl + sid);
-  }
-
-  // Create
-  public addStudent(stObj:any):any
-  {
-    return this.httpObj.post(this.baseUrl, stObj);
-  }
-
-  // Update
-  public updateStudent(stObj:any):any
-  {
-    return this.httpObj.put(this.baseUrl + stObj.studentId, stObj);
-    // return this.httpObj.put(this.baseUrl, stObj);
-  }
-
-
-  // Delete
-  public deleteStudent(sid:number):any
-  {
-    return this.httpObj.delete(this.baseUrl + sid);
-  }
+  
 
   //  Customizing the response using RxJS operators
   getEmpByJob(Job:string):Observable<any[]>
