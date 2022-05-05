@@ -1,0 +1,9 @@
+<input type="text" placeholder="job" [(ngModel)]="empJob"> <br> 
+<button (click)="getdata()">get Employee data</button> &nbsp; 
+<button (click)="getManagerName()">get Manager Name</button>
+<button (click)="getAlldata()">get All Employee data</button> &nbsp; 
+<button (click)="getEmpNamedesignation()">get Employee Name & Designation</button>
+&nbsp; <button (click)="getEmpNotinDept()">get Employee Not in Dept 10</button>
+&nbsp; <button (click)="getSortedEployeedata()"> Sort by salary</button>
+<hr>
+{{result| json}}
