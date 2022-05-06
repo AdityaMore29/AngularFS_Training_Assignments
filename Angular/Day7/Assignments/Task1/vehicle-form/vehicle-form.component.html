@@ -1,12 +1,22 @@
 <style>
 	.error {   color : Red;  }
+    button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 </style>
 
 <h3> Angular Form Validations using  Model Driven  </h3>
 <hr/>
 <form [formGroup]="VehicleForm" (submit)="submit_click()">
     <fieldset>
-        <legend>Vehicle Registration Form</legend>
+        <legend><h2>Vehicle Registration Form </h2></legend>
   
         Full Name:
         <input type="text" formControlName="FullName"  />
@@ -60,6 +70,6 @@
           Year should be between 2012 to 2022
         </span>
       <br><br>
-        <button [disabled]="VehicleForm.invalid">Register</button>
+        <button [ngStyle]="{'cursor':VehicleForm.invalid == true ? 'not-allowed' : 'pointer' }" [disabled]="VehicleForm.invalid">Register</button>
     </fieldset>
   </form>
