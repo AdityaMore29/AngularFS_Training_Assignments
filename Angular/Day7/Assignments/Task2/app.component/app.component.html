@@ -1,0 +1,17 @@
+<div><h1>Application development</h1></div>
+
+
+<hr>
+
+
+<p appShadowHighlighter style="text-shadow: 2px 2px #ff0000;">Attribute Custom Directive Text</p>
+<p [appShadowHighlighter]="'blue'" style="text-shadow: 2px 2px #ff0000;">Attribute Custom Directive Text</p>
+<p [appShadowHighlighter]="'green'" style="text-shadow: 2px 2px green;">Attribute Custom Directive Text</p>
+
+<hr>
+
+<div *ngFor="let item of names"> 
+<p  *appAdminpanel=item>
+    This content is for {{item}} admin.
+</p>
+</div>
