@@ -1,0 +1,35 @@
+<style>
+  form {
+    border: 3px solid #f1f1f1;
+  }
+  .container {
+    padding: 16px;
+   text-align: center; 
+  }
+</style>
+<form  [formGroup]="LoginForm" (submit)="onSubmit()">
+    
+  <div >
+    <div class="container">
+      <mat-form-field appearance="standard">
+      <mat-label><b>Username</b></mat-label>
+      <br>
+      <input matInput type="text"  formControlName="uname"  placeholder="Enter Username" >
+      <mat-error *ngIf="LoginForm.controls['uname'].invalid && LoginForm.controls['uname'].dirty" class="error">User Name is required</mat-error>
+      <br>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="standard">
+      <mat-label><b>Password</b></mat-label>
+      <br>
+      <input matInput type="password" formControlName="psw" placeholder="Enter Password">
+      <mat-error *ngIf="LoginForm.controls['psw'].invalid && LoginForm.controls['psw'].dirty" class="error">Password is required</mat-error>
+      <br>
+    </mat-form-field>
+    <br>
+      <button mat-raised-button  color="primary" [ngStyle]="{'cursor':LoginForm.invalid == true ? 'not-allowed' : 'pointer' }"   type="submit">Login</button>
+      
+    </div>
+  </div>
+  
+</form>
