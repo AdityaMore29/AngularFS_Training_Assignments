@@ -48,9 +48,9 @@ describe('ProductListComponent', () => {
     const childComponent  = fixture.debugElement.query(By.css('app-product-details'));
     const pId = childComponent.properties["prodObj"].PId;
 
-    //console.log("Before remove : "  + component.depts.length);
+    
     childComponent.triggerEventHandler('onProdRemoved', pId)
-    // console.log("After remove : "  + component.depts.length);
+    
 
     let index = component.productArr.findIndex( (item:any) => item.PId == pId);
     expect(index).toBe(-1);
