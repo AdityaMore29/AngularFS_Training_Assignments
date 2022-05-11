@@ -1,0 +1,3 @@
+<div>
+   <app-product-details *ngFor="let item of productArr" [prodObj]="item" (onProdRemoved)="removeProd($event)"></app-product-details>
+ </div>
